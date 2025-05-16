@@ -90,6 +90,7 @@ function parseReturn(parameters: string[], body: string[]): Returns {
     const returnType = parseReturnFromDefinition(parameters);
 
     if (returnType == null || isIterator(returnType.type)) {
+        //
         return parseFromBody(body, /(?:^|\W)return /);
     }
 
